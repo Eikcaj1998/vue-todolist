@@ -22,7 +22,7 @@ const app = new Vue(
         el: '#root',
 
         data: {
-
+            newToDo: "",
             toDoList: [
                 {
                     text: 'Fare i compiti',
@@ -49,5 +49,11 @@ const app = new Vue(
                     done: true
                 },
             ]
+        },
+
+        methods: {
+            deleteList: function (list) {
+                this.toDoList.splice(this.toDoList.indexOf(list), 1);
+            },
         }
-    })
+})
