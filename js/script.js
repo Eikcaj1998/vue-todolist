@@ -52,8 +52,8 @@ const app = new Vue(
         },
 
         methods: {
-            deleteTask: function (list) {
-                this.toDoList.splice(this.toDoList.indexOf(list), 1);
+            deleteTask(index) {
+                this.toDoList.splice(index, 1);
             },
         }
 })
