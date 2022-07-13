@@ -52,7 +52,7 @@ const app = new Vue(
         },
 
         methods: {
-            deleteList: function (list) {
+            deleteTask: function (list) {
                 this.toDoList.splice(this.toDoList.indexOf(list), 1);
             },
         }
