@@ -16,18 +16,21 @@
         <h1 class="text-center mt-2 fw-bold">TO DO LIST</h1>
         <div class="container mt-5">
             <div class="row">
-                <h2 v-if="toDoList.lenght === 0"  class="fw-bold text-center">Hai terminato la Lista</h2> 
+                <h2 v-if="toDoList.length === 0"  class="fw-bold text-center">Hai terminato la Lista</h2> 
                 <ul v-else class="list-group">
                     <li class="list-group-item fw-bold fs-3 d-flex  justify-content-between" 
                      v-for = "(list, index) in toDoList">
-                        <span :class="{'done': toDoList[index].done === true}"
-                                @click="doneAndUndone(index)">{{toDoList[index].text}}</span>
+                        <span>{{toDoList[index].text}}</span>
                         <span span class="x-mark"  @click="deleteTask(list)">&#10060</span>
                     </li>
                 </ul>
-            </div>
-            <div class="col-12 mt-3 d-flex justify-content-center">
-            </div>
+                <div class="col-12 mt-3 d-flex justify-content-center">
+                    <input class="mx-3" type="text" 
+                    v-model.trim="newTask" 
+                    placeholder="Aggiungi task"
+                    @keyup.enter="addTask(newTask)">
+                    <button type="button" class="btn btn-success" @click="addTask">Aggiungi alla lista</button>
+                </div>
             </div>
         </div>
     </div>    
