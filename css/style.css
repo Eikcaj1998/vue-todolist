@@ -1,6 +1,10 @@
 .done {
     text-decoration: line-through;
     text-decoration-color:red ;
+    content: "\2713";
+}
+.done:before{
+    content: '\2713';
 }
 
 li:hover{

@@ -62,6 +62,13 @@ const app = new Vue(
                     this.toDoList.push({text: this.newTask, done:false },);
                     this.newTask = "";
             },
+            doneAndUndone: function (index) {
+                if (this.toDoList[index].done === false) {
+                    this.toDoList[index].done = true;
+                } else {
+                    this.toDoList[index].done = false;
+                }
+            },
         },
 
 })
